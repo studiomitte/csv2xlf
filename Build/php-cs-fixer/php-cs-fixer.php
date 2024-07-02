@@ -150,5 +150,4 @@ $config
     ])
     ->setFinder($finder);
 
-
 return $config;
