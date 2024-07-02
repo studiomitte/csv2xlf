@@ -9,14 +9,10 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class ConvertService
 {
-
     public function __construct(
         protected readonly XlfFileService $xlfFileService,
         protected readonly CsvReader $csvReader
-    )
-    {
-
-    }
+    ) {}
 
     public function convert(string $csvFilePath, string $out, bool $forceRebuild): array
     {
@@ -57,5 +53,4 @@ class ConvertService
 
         return array_merge($existingLabels, $labels);
     }
-
 }

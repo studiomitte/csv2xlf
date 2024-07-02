@@ -9,13 +9,6 @@ use TYPO3\CMS\Core\Localization\Exception\InvalidXmlFileException;
 
 class XlfFileService
 {
-
-
-    /**
-     * @param string $path
-     * @param string $language
-     * @return array
-     */
     public function getLabels(string $path, string $language): array
     {
         $xmlContent = file_get_contents($path);
@@ -29,24 +22,23 @@ class XlfFileService
         $rootXmlNode = simplexml_load_string($xmlContent, \SimpleXMLElement::class, LIBXML_NOWARNING);
         foreach ($rootXmlNode->file->body->children() as $translationElement) {
             if ($translationElement->getName() === 'trans-unit' && !isset($translationElement['restype'])) {
-                $approved = (string)($translationElement['approved'] ?? '');
-                $parsedData[(string)$translationElement['id']][0] = [
-                    'source' => (string)$translationElement->source,
-                    'target' => (string)$translationElement->target,
+                $approved = (string) ($translationElement['approved'] ?? '');
+                $parsedData[(string) $translationElement['id']][0] = [
+                    'source' => (string) $translationElement->source,
+                    'target' => (string) $translationElement->target,
                 ];
-                $id = (string)$translationElement['id'];
+                $id = (string) $translationElement['id'];
                 $newLabels[$id] = new Label(
                     $id,
                     $language,
-                    (string)$translationElement->source,
-                    (string)$translationElement->target,
+                    (string) $translationElement->source,
+                    (string) $translationElement->target,
                     $approved
                 );
             }
         }
         return $newLabels;
     }
-
 
     /**
      * @param Label[] $labels

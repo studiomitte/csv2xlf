@@ -9,7 +9,6 @@ use StudioMitte\Csv2Xlf\Domain\Model\Dto\Label;
 
 class CsvReader
 {
-
     public function getFromFile(string $filePath): array
     {
         $csvReader = Reader::createFromPath($filePath, 'r');
@@ -41,5 +40,4 @@ class CsvReader
 
         return $labels;
     }
-
 }

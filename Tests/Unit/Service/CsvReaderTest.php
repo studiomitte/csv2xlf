@@ -9,7 +9,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class CsvReaderTest extends UnitTestCase
 {
-
     protected CsvReader $subject;
 
     public function setUp(): void
@@ -33,11 +32,11 @@ class CsvReaderTest extends UnitTestCase
     /**
      * @throws \JsonException
      */
-    public function testCsvReading():void
+    public function testCsvReading(): void
     {
-        $labels =  $this->subject->getFromFile(__DIR__ . '/Fixtures/reader/valid.csv');
-        $json = json_encode($labels, JSON_THROW_ON_ERROR|JSON_UNESCAPED_UNICODE);
+        $labels = $this->subject->getFromFile(__DIR__ . '/Fixtures/reader/valid.csv');
+        $json = json_encode($labels, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
 
-        $this->assertJsonStringEqualsJsonFile(__DIR__ . '/Fixtures/reader/valid.json', $json);
+        self::assertJsonStringEqualsJsonFile(__DIR__ . '/Fixtures/reader/valid.json', $json);
     }
 }
