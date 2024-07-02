@@ -1,0 +1,21 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  StudioMitte\Csv2Xlf\:
+    resource: '../Classes/*'
+
+  StudioMitte\Csv2Xlf\Command\ConvertCommand:
+    tags:
+      - name: 'console.command'
+        command: 'csv2xlf:convert'
+        description: 'Convert CSV to XLF'
+        schedulable: true
+
+  StudioMitte\Csv2Xlf\Service\ConvertService:
+      public: true
+
+  StudioMitte\Csv2Xlf\Service\XlfFileService:
+      public: true

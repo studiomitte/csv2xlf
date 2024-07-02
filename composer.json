@@ -1,0 +1,31 @@
+{
+    "name": "studiomitte/csv2xlf",
+    "description": "Convert CSV to XLF",
+    "license": "GPL-2.0-or-later",
+    "type": "typo3-cms-extension",
+    "authors": [
+        {
+            "name": "Georg Ringer",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^12, ^13",
+        "league/csv": "^9.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "StudioMitte\\Csv2Xlf\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StudioMitte\\Csv2Xlf\\Tests\\": "Tests"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "csv2xlf"
+        }
+    }
+}

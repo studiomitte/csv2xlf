@@ -1,0 +1,122 @@
+{
+    "en": {
+        "example": {
+            "key": "example",
+            "language": "en",
+            "source": "This is an example",
+            "translation": "",
+            "approved": ""
+        },
+        "firstName": {
+            "key": "firstName",
+            "language": "en",
+            "source": "First name",
+            "translation": "",
+            "approved": ""
+        },
+        "lastName": {
+            "key": "lastName",
+            "language": "en",
+            "source": "Last name",
+            "translation": "",
+            "approved": ""
+        },
+        "empty": {
+            "key": "empty",
+            "language": "en",
+            "source": "This is an empty value",
+            "translation": "",
+            "approved": ""
+        }
+    },
+    "de": {
+        "example": {
+            "key": "example",
+            "language": "de",
+            "source": "This is an example",
+            "translation": "Das ist ein Beispiel",
+            "approved": "yes"
+        },
+        "firstName": {
+            "key": "firstName",
+            "language": "de",
+            "source": "First name",
+            "translation": "Vorname",
+            "approved": "yes"
+        },
+        "lastName": {
+            "key": "lastName",
+            "language": "de",
+            "source": "Last name",
+            "translation": "Nachname",
+            "approved": "yes"
+        },
+        "empty": {
+            "key": "empty",
+            "language": "de",
+            "source": "This is an empty value",
+            "translation": "",
+            "approved": "yes"
+        }
+    },
+    "es": {
+        "example": {
+            "key": "example",
+            "language": "es",
+            "source": "This is an example",
+            "translation": "Este es un ejemplo",
+            "approved": "yes"
+        },
+        "firstName": {
+            "key": "firstName",
+            "language": "es",
+            "source": "First name",
+            "translation": "Nombre",
+            "approved": "yes"
+        },
+        "lastName": {
+            "key": "lastName",
+            "language": "es",
+            "source": "Last name",
+            "translation": "Apellido",
+            "approved": "yes"
+        },
+        "empty": {
+            "key": "empty",
+            "language": "es",
+            "source": "This is an empty value",
+            "translation": "",
+            "approved": "yes"
+        }
+    },
+    "it": {
+        "example": {
+            "key": "example",
+            "language": "it",
+            "source": "This is an example",
+            "translation": "Questo è un esempio",
+            "approved": "yes"
+        },
+        "firstName": {
+            "key": "firstName",
+            "language": "it",
+            "source": "First name",
+            "translation": "Nome",
+            "approved": "yes"
+        },
+        "lastName": {
+            "key": "lastName",
+            "language": "it",
+            "source": "Last name",
+            "translation": "Cognome",
+            "approved": "yes"
+        },
+        "empty": {
+            "key": "empty",
+            "language": "it",
+            "source": "This is an empty value",
+            "translation": "",
+            "approved": "yes"
+        }
+    }
+}

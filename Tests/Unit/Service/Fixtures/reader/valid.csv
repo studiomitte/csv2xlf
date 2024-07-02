@@ -1,0 +1,5 @@
+"key","en","de","es","it"
+"example","This is an example","Das ist ein Beispiel","Este es un ejemplo","Questo è un esempio"
+"firstName","First name","Vorname","Nombre","Nome"
+"lastName","Last name","Nachname","Apellido","Cognome"
+"empty","This is an empty value","","",""
