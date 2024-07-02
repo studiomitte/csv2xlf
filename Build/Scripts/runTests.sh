@@ -65,7 +65,7 @@ handleDbmsAndDriverOptions() {
 
 # Load help text into $HELP
 read -r -d '' HELP <<EOF
-studiomitte/friendlycaptcha test runner. Execute unit test suite and some other details.
+studiomitte/csv2xlf test runner. Execute unit test suite and some other details.
 Also used by github for test execution.
 
 Recommended docker version is >=20.10 for xdebug break pointing to work reliably, and
@@ -225,7 +225,7 @@ POSTGRES_VERSION="10"
 USED_XDEBUG_MODES="debug,develop"
 #@todo the $$ would add the current process id to the name, keeping as plan b
 #PROJECT_NAME="runTests-$(basename $(dirname $ROOT_DIR))-$(basename $ROOT_DIR)-$$"
-PROJECT_NAME="runtestsfriendlycaptcha"
+PROJECT_NAME="csv2xlf"
 PROJECT_NAME="${PROJECT_NAME//[[:blank:]]/}"
 echo $PROJECT_NAME
 

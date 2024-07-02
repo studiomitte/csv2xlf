@@ -1,21 +1,21 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Integration of Friendly Captcha',
-    'description' => 'FriendlyCaptcha Integration for EXT:powermail and EXT:form and your custom implementation',
-    'category' => 'plugin',
+    'title' => 'Convert CSV to XLF',
+    'description' => 'Provide command to convert given csv to a XLF file',
+    'category' => 'misc',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-12.9.99',
+            'typo3' => '12.4.0-12.9.99',
         ],
         'conflicts' => [
         ],
     ],
     'autoload' => [
         'psr-4' => [
-            'StudioMitte\\FriendlyCaptcha\\' => 'Classes',
+            'StudioMitte\\Csv2Xlf\\' => 'Classes',
         ],
     ],
     'state' => 'beta',
-    'version' => '0.1.6',
+    'version' => '0.1.0',
 ];

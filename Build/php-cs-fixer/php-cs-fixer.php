@@ -2,7 +2,7 @@
 
 $config = \TYPO3\CodingStandards\CsFixerConfig::create();
 $config->setHeader(
-    'This file is part of the "friendlycaptcha" Extension for TYPO3 CMS.
+    'This file is part of the "csv2xlf" Extension for TYPO3 CMS.
 
 For the full copyright and license information, please read the
 LICENSE.txt file that was distributed with this source code.',
