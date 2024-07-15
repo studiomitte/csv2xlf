@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace StudioMitte\Csv2Xlf\Tests\Service;
 
-use StudioMitte\Csv2Xlf\Service\CsvReader;
+use StudioMitte\Csv2Xlf\Service\CsvService;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
-class CsvReaderTest extends UnitTestCase
+class CsvServiceTest extends UnitTestCase
 {
-    protected CsvReader $subject;
+    protected CsvService $subject;
 
     public function setUp(): void
     {
-        $this->subject = new CsvReader();
+        $this->subject = new CsvService();
         parent::setUp();
     }
 

@@ -9,6 +9,9 @@ use TYPO3\CMS\Core\Localization\Exception\InvalidXmlFileException;
 
 class XlfFileService
 {
+    /**
+     * @return Label[]
+     */
     public function getLabels(string $path, string $language): array
     {
         $xmlContent = file_get_contents($path);

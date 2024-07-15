@@ -15,6 +15,8 @@ composer require studiomitte/csv2xlf
 
 ## Usage
 
+### CSV to XLF
+
 CSV looks like this
 ```csv
 "key","en","de"
@@ -24,14 +26,19 @@ CSV looks like this
 
 With the following requirements:
 - The first row is the header 
-- The header starts with `key`, followed by `en` and afterwards the language codes
+- The header starts with `key`, followed by `en` and afterward the language codes
 - Default is always `en`
 
 
 ```bash
-./bin/typo3 csv2xlf:convert packages/csv2xlf/Resources/Private/Examples/in.csv packages/csv2xlf/Resources/Private/Examples/out.xlf
+./bin/typo3 csv2xlf:csv2xlf packages/csv2xlf/Resources/Private/Examples/csv2xlf/in.csv packages/csv2xlf/Resources/Private/Examples/csv2xlf/out.xlf
 ```
 
+### XLF to CSV
+
+```bash
+./bin/typo3 csv2xlf:xlf2csv packages/csv2xlf/Resources/Private/Examples/xlf2csv/in.xlf  packages/csv2xlf/Resources/Private/Examples/xlf2csv/out.csv de,fr,es
+```
 
 ## Credits
 

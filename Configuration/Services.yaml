@@ -7,11 +7,18 @@ services:
   StudioMitte\Csv2Xlf\:
     resource: '../Classes/*'
 
-  StudioMitte\Csv2Xlf\Command\ConvertCommand:
+  StudioMitte\Csv2Xlf\Command\ConvertCsv2XlfCommand:
     tags:
       - name: 'console.command'
-        command: 'csv2xlf:convert'
+        command: 'csv2xlf:csv2xlf'
         description: 'Convert CSV to XLF'
+        schedulable: true
+
+  StudioMitte\Csv2Xlf\Command\ConvertXlf2CsvCommand:
+    tags:
+      - name: 'console.command'
+        command: 'csv2xlf:xlf2csv'
+        description: 'Convert XLF to CSV'
         schedulable: true
 
   StudioMitte\Csv2Xlf\Service\ConvertService:

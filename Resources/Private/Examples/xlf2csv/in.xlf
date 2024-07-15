@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="messages">
+    <header/>
+    <body>
+      <trans-unit id="example" resname="example">
+        <source>This is an example NEW</source>
+      </trans-unit>
+      <trans-unit id="privacy" resname="privacy">
+        <source>&lt;![CDATA[&lt;h3&gt;Price&lt;/h3&gt;</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

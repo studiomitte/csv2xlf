@@ -11,19 +11,53 @@ class ConvertService
 {
     public function __construct(
         protected readonly XlfFileService $xlfFileService,
-        protected readonly CsvReader $csvReader
+        protected readonly CsvService $csvService
     ) {}
 
-    public function convert(string $csvFilePath, string $out, bool $forceRebuild): array
+    public function convertXlf2Csv(string $xlfFilePath, string $out, array $languages): array
+    {
+        $headers = ['key', 'en'];
+        $defaultLabels = $this->xlfFileService->getLabels($xlfFilePath, 'en');
+        $translations = [];
+        foreach ($languages as $language) {
+            if ($language === 'en') {
+                throw new \UnexpectedValueException('Language "en" is not allowed', 1721035547);
+            }
+            $headers[] = $language;
+            $path = $this->getXlfFileNameForLanguage($xlfFilePath, $language);
+            if (!is_file($path)) {
+                continue;
+            }
+            $translations[$language] = $this->xlfFileService->getLabels($path, $language);
+        }
+
+        $flatList = [];
+
+        foreach ($defaultLabels as $label) {
+            $flatList[$label->key]['key'] = $label->key;
+            $flatList[$label->key]['en'] = $label->source;
+
+            foreach ($languages as $language) {
+                if (isset($translations[$language][$label->key])) {
+                    $flatList[$label->key][$language] = $translations[$language][$label->key]->translation;
+                } else {
+                    $flatList[$label->key][$language] = '';
+                }
+            }
+        }
+
+        $this->csvService->generateCsv($out, $flatList, $headers);
+        return $flatList;
+    }
+
+    public function convertCsv2Xlf(string $csvFilePath, string $out, bool $forceRebuild): array
     {
         $stats = [];
-        $data = $this->csvReader->getFromFile($csvFilePath);
+        $data = $this->csvService->getFromFile($csvFilePath);
 
         foreach ($data as $language => $labels) {
             if ($language !== 'en') {
-                $fileInfo = pathinfo($out);
-
-                $targetFilename = sprintf('%s/%s.%s', $fileInfo['dirname'], $language, $fileInfo['basename']);
+                $targetFilename = $this->getXlfFileNameForLanguage($out, $language);
             } else {
                 $targetFilename = $out;
             }
@@ -52,5 +86,12 @@ class ConvertService
         $existingLabels = $this->xlfFileService->getLabels($path, $language);
 
         return array_merge($existingLabels, $labels);
+    }
+
+    protected function getXlfFileNameForLanguage(string $out, string $language): string
+    {
+        $fileInfo = pathinfo($out);
+
+        return sprintf('%s/%s.%s', $fileInfo['dirname'], $language, $fileInfo['basename']);
     }
 }

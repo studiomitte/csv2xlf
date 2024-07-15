@@ -13,7 +13,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class ConvertCommand extends Command
+class ConvertCsv2XlfCommand extends Command
 {
     protected function configure(): void
     {
@@ -52,7 +52,7 @@ class ConvertCommand extends Command
         }
 
         $convertService = GeneralUtility::makeInstance(ConvertService::class);
-        $statistic = $convertService->convert($in, $out, $rebuild);
+        $statistic = $convertService->convertCsv2Xlf($in, $out, $rebuild);
 
         $io->table(['Language', 'Count'], array_map(fn ($k, $v) => [$k, $v], array_keys($statistic), $statistic));
 
